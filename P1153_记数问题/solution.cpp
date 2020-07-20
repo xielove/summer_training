@@ -16,12 +16,17 @@ using namespace std;
 class Solution {
 public:
     void solution() {
-        string num;        
-        int tar = 0;
-        cin >> num >> tar;
+        int num = 0, x = 0;
+        cin >> num >> x;
         int ans = 0;
-        for(auto it : num){
-            ans += (it == tar+'0') ? 1 : 0;
+        for(int i = 1; i <= num; i++){
+            int j = i;
+            while(j != 0){
+                if(j % 10 == x){
+                    ans++;
+                }
+                j /= 10;
+            }
         }
         cout << ans << endl;
     }
